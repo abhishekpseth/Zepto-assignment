@@ -1,13 +1,11 @@
 import React from "react";
-import ChipsMaker from "./components/ChipsMaker/ChipsMaker";
+import SearchBar from "./components/ChipsMaker/SearchBar";
 
 const App = () => {
   return (
     <>
-      <div className="h-[60vh]">
-        <ChipsMaker />
-      </div>
-      <footer className="h-[20vh] grid place-content-center text-center">
+      <SearchBar />
+      <footer className="mt-[40vh] grid place-content-center text-center">
         <h1 className="font-bold">By Abhishek Prasad Seth</h1>
         <p>Aspiring Frontend Developer</p>
         <p>B.Tech NIT ALLAHABAD 2023</p>

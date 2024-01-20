@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 const SearchResults = ({
   data: users,
   setBucket,
+  filteredData,
   setFilteredData,
   isLoading,
 }) => {
@@ -18,8 +19,12 @@ const SearchResults = ({
   return (
     <div className="absolute top-full border bg-white z-10 h-[200px] overflow-y-scroll w-[400px] flex flex-col">
       {isLoading ? (
-        <div className="h-full grid place-content-center text-gray-400 text-[24px]">
+        <div className="h-full  grid place-content-center text-gray-400 text-[24px]">
           Loading...
+        </div>
+      ) : filteredData.length === 0 ? (
+        <div className="h-full grid place-content-center text-gray-400 text-[24px]">
+          No users found.
         </div>
       ) : (
         users.map((user) => (
@@ -32,7 +37,7 @@ const SearchResults = ({
               <div>
                 <img
                   src={user.image}
-                  alt="Profil Picture"
+                  alt="Profile Picture"
                   className="w-[40px] h-[40px] bg-red-500 rounded-full"
                 />
               </div>
